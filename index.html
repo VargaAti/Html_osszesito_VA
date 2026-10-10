@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="hu">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Kirándulás</title>
-    </head>
-    <body>
-        <h1>Kirándulás a Liszt Ferenc Repülőtérre</h1>
-        <p>Úti célunk a <i><a href="https://www.bud.hu/" target="_blank">Liszt Ferenc Nemzetközi Repülőtér</a> és az Aeropark repülőgépmúzeum</i>, ahol bekukkanthatunk a repülés izgalmas kulisszái mögé, legendás történelmi gépeket fedezhetünk fel, és megtudhatjuk, hogyan működik egy valódi reptér. Ezen az oldalon megtaláljátok a legfontosabb tudnivalókat, a programtervet, a <strong>jelentkezési űrlapot</strong> és minden hasznos információt az utazásról</p>
-        <q>A repülés nemcsak a fizika törvényeiről szól, hanem a határok átlépéséről is.</q>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kirándulás</title>
+</head>
+
+<body>
+    <h1>Kirándulás a Liszt Ferenc Repülőtérre</h1>
+    <p>Úti célunk a <i><a href="https://www.bud.hu/" target="_blank">Liszt Ferenc Nemzetközi Repülőtér</a> és az
+            Aeropark repülőgépmúzeum</i>, ahol bekukkanthatunk a repülés izgalmas kulisszái mögé, legendás történelmi
+        gépeket fedezhetünk fel, és megtudhatjuk, hogyan működik egy valódi reptér. Ezen az oldalon megtaláljátok a
+        legfontosabb tudnivalókat, a programtervet, a <strong><a href="#jelentkezes">jelentkezési űrlapot</a></strong>
+        és minden hasznos
+        információt az utazásról</p>
+    <q>A repülés nemcsak a fizika törvényeiről szól, hanem a határok átlépéséről is.</q><br>
+
+    <img src="tn4-ferihegy2.jpg" alt="Liszt Ferenc Nemzetközi Repülőtér">
+
     <h2>Program</h2>
     <ol>
         <li>Utazás Budapestre</li>
@@ -25,10 +35,106 @@
         <li>Költőpénz</li>
     </ul>
     <h2>Tudnivalók</h2>
-    <ul>Gyülkező a vasútállomáson 6:15</ul>
-    <ul>a vonat 6:31-kor indul (Bejárósoknak nem kell átjönnie Félegyházára)</ul>
-    <ul>Kísérő tanár: Minta Elek (<a href="mailto:minta.elek@suli.hu">minta.elek@suli.hu</a>)</ul>
-    <footer>Varga Attila - 2026 &copy;</footer>
 
+    <dl>
+        <dt>Gyülekező</dt>
+        <dd>A vasútállomáson 6:15-kor.</dd>
+
+        <dt>Indulás</dt>
+        <dd>A vonat 6:31-kor indul.</dd>
+
+        <dt>Kísérő tanár</dt>
+        <dd>
+            <a href="mailto:minta.elek@suli.hu">Minta Elek</a>
+        </dd>
+    </dl>
+
+    <table>
+        <tr>
+            <th>Tétel</th>
+            <th>Ár</th>
+        </tr>
+        <tr>
+            <td>Utazás</td>
+            <td>1890 Ft</td>
+        </tr>
+        <tr>
+            <td>Belépő</td>
+            <td>7000 Ft</td>
+        </tr>
+        <tr>
+            <td>Ebéd</td>
+            <td>2500 Ft</td>
+        </tr>
+        <tr>
+            <td colspan="2">Összesen: 11 390 Ft</td>
+        </tr>
+    </table>
+
+    <form action="https://httpbin.org/post" method="POST" id="jelentkezes">
+
+        <fieldset>
+            <legend>Személyes adatok</legend>
+
+            <p>
+                <label for="nev">Név:</label><br>
+                <input type="text" id="nev" name="nev" required>
+            </p>
+
+            <p>
+                <label for="email">E-mail:</label><br>
+                <input type="email" id="email" name="email" required>
+            </p>
+
+            <p>
+                <label for="telefon">Telefon:</label><br>
+                <input type="tel" id="telefon" name="telefon" placeholder="+36 30 123 4567">
+            </p>
+
+            <p>
+                <label for="letszam">Hány fővel jössz (magadat is beleértve):</label><br>
+                <input type="number" id="letszam" name="letszam" value="1" min="1" max="4" required>
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Egyéb</legend>
+
+            <p>
+                <label for="etkezes">Étkezés:</label><br>
+                <select id="etkezes" name="etkezes" required>
+                    <option value="">-- válassz --</option>
+                    <option value="husos">húsos menü</option>
+                    <option value="vegaterianus">vegetáriánus menü</option>
+                    <option value="sajat">hozok magamnak ételt</option>
+                </select>
+            </p>
+
+            <p>
+                <strong>Extra program:</strong><br>
+                <label>
+                    <input type="checkbox" name="extra_program[]" value="szimulator"> Repülőgép-szimulátor
+                </label>
+            </p>
+
+            <p>
+                <label for="megjegyzes">Megjegyzés:</label><br>
+                <textarea id="megjegyzes" name="megjegyzes" rows="4" cols="40"></textarea>
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Megerősítés</legend>
+
+            <input type="checkbox" id="szulo" name="szulo" value="igen" required>
+            <label for="szulo">A szülő tud a kirándulásról</label><br><br>
+
+            <button type="submit">Jelentkezem</button>
+        </fieldset>
+
+    </form>
+
+    <footer>Varga Attila - 2026 &copy;</footer>
 </body>
+
 </html>
