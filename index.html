@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kirándulás</title>
+    <title>Kirándulás a Liszt Ferenc Repülőtérre</title>
 </head>
 
 <body>
@@ -14,8 +14,9 @@
         gépeket fedezhetünk fel, és megtudhatjuk, hogyan működik egy valódi reptér. Ezen az oldalon megtaláljátok a
         legfontosabb tudnivalókat, a programtervet, a <strong><a href="#jelentkezes">jelentkezési űrlapot</a></strong>
         és minden hasznos
-        információt az utazásról</p>
-    <q>A repülés nemcsak a fizika törvényeiről szól, hanem a határok átlépéséről is.</q><br>
+        információt az utazásról.</p>
+    <p>Minta Elek kísérő tanár üzenete: <q>A repülés nemcsak a fizika törvényeiről szól, hanem a határok átlépéséről
+            is.</q></p>
 
     <img src="tn4-ferihegy2.jpg" alt="Liszt Ferenc Nemzetközi Repülőtér">
 
@@ -23,7 +24,12 @@
     <ol>
         <li>Utazás Budapestre</li>
         <li>Liszt Ferenc Nemzetközi Repülőtér</li>
-        <li>Aeropark repülőgépmúzeum</li>
+        <li>Aeropark repülőgépmúzeum
+            <ul>
+                <li>Történelmi repülőgépek megtekintése</li>
+                <li>Pilótafülkék megtekintése</li>
+            </ul>
+        </li>
         <li>2 óra ebéd és szabadidő a Westendben</li>
         <li>Hazautazás</li>
     </ol>
@@ -35,18 +41,15 @@
         <li>Költőpénz</li>
     </ul>
     <h2>Tudnivalók</h2>
-
     <dl>
         <dt>Gyülekező</dt>
         <dd>A vasútállomáson 6:15-kor.</dd>
 
         <dt>Indulás</dt>
-        <dd>A vonat 6:31-kor indul.</dd>
+        <dd>A vonat 6:31-kor indul. A bejárósoknak nem kell átjönniük Félegyházára.</dd>
 
         <dt>Kísérő tanár</dt>
-        <dd>
-            <a href="mailto:minta.elek@suli.hu">Minta Elek</a>
-        </dd>
+        <dd><a href="mailto:minta.elek@suli.hu">Minta Elek</a></dd>
     </dl>
 
     <table>
@@ -98,6 +101,18 @@
         </fieldset>
 
         <fieldset>
+            <legend>Melyik csoporttal látogatod meg az Aeroparkot?</legend>
+            <p>
+                <input type="radio" id="csoport1" name="csoport" value="elso" checked>
+                <label for="csoport1">Első csoport</label>
+            </p>
+            <p>
+                <input type="radio" id="csoport2" name="csoport" value="masodik">
+                <label for="csoport2">Második csoport</label>
+            </p>
+        </fieldset>
+
+        <fieldset>
             <legend>Egyéb</legend>
 
             <p>
@@ -105,16 +120,17 @@
                 <select id="etkezes" name="etkezes" required>
                     <option value="">-- válassz --</option>
                     <option value="husos">húsos menü</option>
-                    <option value="vegaterianus">vegetáriánus menü</option>
+                    <option value="vegetarianus">vegetáriánus menü</option>
                     <option value="sajat">hozok magamnak ételt</option>
                 </select>
             </p>
 
             <p>
                 <strong>Extra program:</strong><br>
-                <label>
-                    <input type="checkbox" name="extra_program[]" value="szimulator"> Repülőgép-szimulátor
-                </label>
+                <input type="checkbox" id="szimulator" name="extra_program[]" value="szimulator">
+                <label for="szimulator">Repülőgép-szimulátor</label><br>
+                <input type="checkbox" id="idegenvezetes" name="extra_program[]" value="idegenvezetes">
+                <label for="idegenvezetes">Idegenvezetés az Aeroparkban</label>
             </p>
 
             <p>
@@ -123,18 +139,18 @@
             </p>
         </fieldset>
 
-        <fieldset>
-            <legend>Megerősítés</legend>
-
+        <p>
             <input type="checkbox" id="szulo" name="szulo" value="igen" required>
-            <label for="szulo">A szülő tud a kirándulásról</label><br><br>
-
-            <button type="submit">Jelentkezem</button>
-        </fieldset>
+            <label for="szulo">A szülő tud a kirándulásról</label>
+        </p>
+        <button type="submit">Jelentkezem</button>
 
     </form>
 
-    <footer>Varga Attila - 2026 &copy;</footer>
+    <footer>
+        <p>&copy; 2026 Varga Attila</p>
+    </footer>
+
 </body>
 
 </html>
